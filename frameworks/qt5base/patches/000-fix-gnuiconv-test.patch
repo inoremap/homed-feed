@@ -1,0 +1,15 @@
+--- a/src/corelib/codecs/qiconvcodec.cpp
++++ b/src/corelib/codecs/qiconvcodec.cpp
+@@ -180,12 +180,7 @@ QString QIconvCodec::convertToUnicode(co
+     IconvState *state = *pstate;
+     size_t inBytesLeft = len;
+     // best case assumption, each byte is converted into one UTF-16 character, plus 2 bytes for the BOM
+-#if !QT_CONFIG(posix_libiconv)
+-    // GNU doesn't disagree with POSIX :/
+-    const char *inBytes = chars;
+-#else
+     char *inBytes = const_cast<char *>(chars);
+-#endif
+ 
+     QByteArray in;
+     if (remainingCount) {
