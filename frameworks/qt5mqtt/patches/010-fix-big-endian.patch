@@ -1,0 +1,11 @@
+--- a/src/mqtt/qmqttcontrolpacket_p.h
++++ b/src/mqtt/qmqttcontrolpacket_p.h
+@@ -50,7 +50,7 @@
+ class Q_AUTOTEST_EXPORT QMqttControlPacket
+ {
+ public:
+-    enum PacketType {
++    enum PacketType : quint8 {
+         UNKNOWN     = 0x00,
+         CONNECT     = 0x10,
+         CONNACK     = 0x20,
